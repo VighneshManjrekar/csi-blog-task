@@ -27,9 +27,9 @@ const Home = () => {
 
   return (
     <div className="container my-4">
-      <div className="d-flex justify-content-between flex-sm-row">
+      <div className="d-flex align-items-center justify-content-between flex-column flex-sm-row">
         <h1 className="text-center">Blog Posts</h1>
-        {sortedBlogPosts.length > 1 && (
+        {sortedBlogPosts.length > 1 ? (
           <select
             className="form-select w-auto w-sm-25"
             value={sortOption}
@@ -39,6 +39,8 @@ const Home = () => {
             <option value="title A-Z">Title A-Z</option>
             <option value="title Z-A">Title Z-A</option>
           </select>
+        ) : (
+          <p className="text-bg-secondary rounded px-3 py-2 ">Add 2 or more blogs to filter.</p>
         )}
       </div>
       <div className="my-2 d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
